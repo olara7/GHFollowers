@@ -33,7 +33,7 @@ Github profile in a SafariViewController
 
 <img width="250" alt="Screen Shot 2023-01-10 at 3 36 37 PM" src="https://user-images.githubusercontent.com/54912970/211684706-9da9593b-d96c-477b-8ab6-e50e81f4b9ab.png">
 
-Techonology Used:
+### Techonology Used:
 - Swift, UIKit - Build app programmatically
 - SafariServices - Show github user's profile in a SafariViewController
 - Persistance Manager - Keep track of user's favorites
