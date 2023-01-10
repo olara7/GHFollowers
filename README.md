@@ -7,12 +7,17 @@ programmitcally is important. There are several reason why I chose to learn prog
 
 Features:
 - Search for a Github user
+- Search Github user's followers
 - View Gituhb user's followers
 - View Github profile details
+- View Github profile in SafariViewController
 - Add Github user to favorites
 
 Techonology Used:
 - Swift, UIKit - Build app programmatically
+- SafariServices - Show github user's profile in a SafariViewController
+- Persistance Manager - Keep track of user's favorites
+- Network Manager - Call Github API
 - Github API - Fetch github user information
 
 ### Things I learned:
