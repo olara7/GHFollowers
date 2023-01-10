@@ -13,6 +13,26 @@ Features:
 - View Github profile in SafariViewController
 - Add Github user to favorites
 
+Home Screen
+
+<img width="250" alt="Screen Shot 2023-01-10 at 3 28 53 PM" src="https://user-images.githubusercontent.com/54912970/211684609-c48fe27e-b9a4-4673-a03e-8643314f6d83.png">
+
+Github User's followers
+
+<img width="250" alt="Screen Shot 2023-01-10 at 3 29 11 PM" src="https://user-images.githubusercontent.com/54912970/211684651-76fdfa40-0d1c-4d6a-a34f-069dc58eb4d8.png">
+
+Github user details
+
+<img width="250" alt="Screen Shot 2023-01-10 at 3 31 53 PM" src="https://user-images.githubusercontent.com/54912970/211684659-61b73a5e-b932-4a4c-97a3-1ec1a42fed61.png">
+
+Favorites
+
+<img width="250" alt="Screen Shot 2023-01-10 at 3 37 23 PM" src="https://user-images.githubusercontent.com/54912970/211684670-4aba257c-eb76-4e77-9362-5d67e56b81ee.png">
+
+Github profile in a SafariViewController
+
+<img width="250" alt="Screen Shot 2023-01-10 at 3 36 37 PM" src="https://user-images.githubusercontent.com/54912970/211684706-9da9593b-d96c-477b-8ab6-e50e81f4b9ab.png">
+
 Techonology Used:
 - Swift, UIKit - Build app programmatically
 - SafariServices - Show github user's profile in a SafariViewController
