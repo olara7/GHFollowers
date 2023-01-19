@@ -12,6 +12,7 @@ class SearchVC: UIViewController {
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    var logoImageVIewTopConstraint: NSLayoutConstraint!
     
     //Computed property to check if the text entered is empty
     var isUsernameEntered: Bool {
@@ -19,14 +20,14 @@ class SearchVC: UIViewController {
     }
 
     override func viewDidLoad() {
+        //Using system background will make the background color adapt in light and dark mode
+        view.backgroundColor = .systemBackground
+        
         super.viewDidLoad()
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
         createDismissKeyboardTapGesture()
-        
-        //Using system background will make the background color adapt in light and dark mode
-        view.backgroundColor = .systemBackground
         
     }
     
@@ -34,11 +35,12 @@ class SearchVC: UIViewController {
     // doing in viewDidLoad will only do it once
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        usernameTextField.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
@@ -50,11 +52,12 @@ class SearchVC: UIViewController {
             presentsGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. The textfield is empty.", buttonTitle: "Ok")
             return
         }
+        
+        usernameTextField.resignFirstResponder()
+        
         //To pass data:
         //Create the object, configure the data you want to pass and push the vc into the stack
-        let followerListVC = FollowerListVC()
-        followerListVC.username = usernameTextField.text
-        followerListVC.title = usernameTextField.text
+        let followerListVC = FollowerListVC(username: usernameTextField.text!)
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
@@ -62,11 +65,15 @@ class SearchVC: UIViewController {
         //Place the image on the view controller
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = Images.ghLogo
+        
+        let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+        
+        logoImageVIewTopConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)
+        logoImageVIewTopConstraint.isActive = true
         
         //Where to place the image on the view
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
